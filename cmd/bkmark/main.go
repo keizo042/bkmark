@@ -22,6 +22,9 @@ func main() {
 		return
 	}
 	for _, v := range params.Bookmarks {
+		if v.Url == "" {
+			continue
+		}
 		if _, err := url.Parse(v.Url); err != nil {
 			fmt.Println(err)
 			continue
