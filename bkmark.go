@@ -77,7 +77,7 @@ func fixBookmark(bookmarkToml []BookmarkToml) map[string]Bookmark {
 		case "folder":
 			b2 := fixBookmark(b.Children)
 			for k, v := range b2 {
-				bookmark[k] = v
+				bookmark[b.Name+"/"+k] = v
 			}
 		default:
 			continue
