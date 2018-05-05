@@ -9,7 +9,14 @@ import (
 	"strings"
 )
 
+const (
+	BrowserChrome  = "chrome"
+	BrowserFireFox = "firefox"
+	BrowserMSEdge  = "MSEdge"
+)
+
 type Conf struct {
+	Browser BrowserType
 }
 
 type Bookmark struct {
@@ -44,7 +51,9 @@ type Params struct {
 	Bookmarks map[string]Bookmark
 }
 
-var DefaultConf = Conf{}
+var DefaultConf = Conf{
+	Browser: BrowserChrome,
+}
 
 func LoadBookMark() (*Params, error) {
 	var v ChromeBookmarkToml

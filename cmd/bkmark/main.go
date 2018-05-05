@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"net/url"
 
@@ -10,6 +11,7 @@ import (
 func main() {
 	var err error
 	//searchByUrl := flag.Bool("url", false, "search by url")
+	browserType := flag.String("browser", "chrome", "specify browser")
 	var params *bkmark.Params
 	params, err = bkmark.LoadBookMark()
 	if err != nil {
